@@ -16,7 +16,17 @@ class echobit(App):
         text-style: bold;
     }
 
-    /* хз */
+    /* лог */
+    Log {
+        height: 1fr;
+        background: #080808;
+        color: #e0e0e0;
+        border: dashed #333333;
+    }
+
+    /* =========================================== */
+
+    /* контейнер(чат + юзер) */
     #main-container {
         layout: horizontal;
         height: 1fr;
@@ -39,36 +49,37 @@ class echobit(App):
         padding: 1;
     }
 
-    /* лог */
-    Log {
-        height: 1fr;
-        background: #080808;
-        color: #e0e0e0;
-        border: dashed #333333;
-    }
+    /* ============================================ */
 
-    /*  */
+    /* контейнер ввода (поле ввода + кнопка отправки) */
     #input-container {
-        layout: horizontal;
-        height: 3;
+        height: 5;
         margin-top: 1;
+        padding: 0;
     }
 
     /* поле ввода */
     Input {
-        width: 90%;
+        width: 1fr;
+        height: 3;
         background: #1a1a1a;
+        min-width: 10;
         border: solid #00ff66;
         color: #ffffff;
+        background: transparent;
     }
 
     /* кнопка отправки */
     Button {
-        width: 10%;
+        width: 12;
+        height: 3;
+        margin-left: 0;
         background: #00ff66;
         color: #000000;
         text-style: bold;
     }
+
+    /* =========================================== */
 
     Button:hover {
         background: #00cc52;
@@ -82,12 +93,18 @@ class echobit(App):
             with Vertical(id='sidebar'):
                 yield Static(" Users:\n ")
 
-            with Vertical(id='chat-area'):
+            with Vertical(id="chat-area"):
                 yield Log(id="chat-log")
 
-                yield Input(placeholder="Enter Message: ", id="message-input")
-
-                yield Button("Send", variant="primary", id="send-btn")
+                with Horizontal(id="input-container"):
+                    yield Input(
+                        placeholder="Enter Message:",
+                        id="message-input"
+                    )
+                    yield Button("Send",
+                        variant="primary",
+                        id="send-btn"
+                    )
         yield Footer()
 
     @on(Button.Pressed, '#send-btn')

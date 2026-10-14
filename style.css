@@ -78,6 +78,16 @@ Screen {
     padding: 1;
 }
 
+#login-btn {
+    margin-left: 20;
+    border: solid #02d155;
+    background: transparent;
+}
+
+#login-btn:hover {
+    border: solid #006629;
+}
+
 /* =========================================== */
 
 Button:hover {

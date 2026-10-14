@@ -1,3 +1,5 @@
+from curses import echo
+
 from textual import screen
 from textual.screen import Screen
 from textual import on
@@ -23,7 +25,7 @@ class Login(Screen):
             self.app.current_user = nickname
             self.app.switch_screen("chat")
 
-class Echobit(Screen):
+class Messenger(Screen):
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
 
@@ -52,17 +54,17 @@ class Echobit(Screen):
             chat_log.write(f'{self.app.current_user}: {text}\n')
             user_input.value = ''
 
-class messenger(App):
+class echobit(App):
     CSS_PATH = "style.css"
 
     SCREENS = {
         "login": Login,
-        "chat": Echobit,
+        "chat": Messenger,
     }
 
     def on_mount(self) -> None:
         self.current_user = "Elliot"
         self.push_screen("login")
 
-app = messenger()
+app = echobit()
 app.run()

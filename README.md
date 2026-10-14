@@ -3,4 +3,4 @@
 ФАЙЛ БУДЕТ МЕНЯТСЯ!!!
 
 
-Telegramm Channe: https://t.me/echobitorg
+Telegramm Channel: https://t.me/echobitorg

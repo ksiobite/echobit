@@ -1,0 +1,85 @@
+Screen {
+    background: #0d0d0d;
+    color: #00ff66;
+}
+
+Header {
+    background: #1a1a1a;
+    color: #00ff66;
+    text-style: bold;
+}
+
+/* лог */
+Log {
+    height: 1fr;
+    background: #080808;
+    color: #e0e0e0;
+    border: dashed #333333;
+}
+
+/* =========================================== */
+
+/* контейнер(чат + юзер) */
+#main-container {
+    layout: horizontal;
+    height: 1fr;
+}
+
+/* чат */
+#chat-area {
+    width: 5fr;
+    layout: vertical;
+    padding: 0;
+    border: solid #00ff66;
+    background: #121212;
+}
+
+/* юзеры  */
+#sidebar {
+    width: 1fr;
+    border: solid #00aa44;
+    background: #121212;
+    padding: 1;
+}
+
+/* ============================================ */
+
+/* контейнер ввода (поле ввода + кнопка отправки) */
+#input-container {
+    height: 3;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* поле ввода */
+Input {
+    width: 1fr;
+    height: 3;
+    background: #1a1a1a;
+    min-width: 10;
+    border: solid #00ff66;
+    color: #ffffff;
+    background: transparent;
+}
+
+/* =========================================== */
+
+Screen {
+    background: #0d0d0d;
+    color: #00ff66;
+    align: center middle;
+}
+
+#login-container {
+    width: 40;
+    height: 18;
+    border: solid #00ff66;
+    background: #121212;
+    padding: 1;
+}
+
+/* =========================================== */
+
+Button:hover {
+    background: #00cc52;
+}
